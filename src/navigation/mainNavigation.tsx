@@ -2,7 +2,7 @@ import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import HomeScreen from "screens/home";
-import Colors from "themes/colors/colors";
+import Colors from "themes/colors";
 
 const Stack = createStackNavigator();
 
