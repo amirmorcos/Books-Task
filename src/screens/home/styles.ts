@@ -6,4 +6,9 @@ export default (colors: AppColors) =>
     container: {
       backgroundColor: colors.WHITE,
     },
+    loadingContainer: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    },
   });

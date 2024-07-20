@@ -10,7 +10,7 @@ export default (colors: AppColors) =>
       backgroundColor: colors.WHITE,
     },
     scrollContent: {
-      paddingBottom: verticalScale(50),
+      paddingBottom: verticalScale(120),
     },
     imgBg: {
       height: verticalScale(400),
@@ -32,6 +32,10 @@ export default (colors: AppColors) =>
     },
     bookAuthor: {
       ...Typography.heading.h6,
+    },
+    bookAuthorContainer: {
+      flexDirection: "row",
+      alignItems: "center",
       marginTop: verticalScale(5),
       marginBottom: verticalScale(30),
     },
@@ -59,5 +63,10 @@ export default (colors: AppColors) =>
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
       elevation: 5,
+    },
+    backIcon: {
+      marginTop: verticalScale(45),
+      marginBottom: verticalScale(10),
+      marginStart: scale(20),
     },
   });

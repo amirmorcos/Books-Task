@@ -11,6 +11,9 @@ import MainNavigation from "navigation/mainNavigation";
 import React from "react";
 
 function App(): React.JSX.Element {
+  if (__DEV__) {
+    require("./ReactotronConfig");
+  }
   return <MainNavigation />;
 }
 
