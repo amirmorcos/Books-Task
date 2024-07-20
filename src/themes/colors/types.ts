@@ -7,6 +7,7 @@ export type AppColors = {
   notification: string;
 } & {
   WHITE: string;
+  BLACK: string;
   YELLLOW: string;
   ORANGE: string;
   RED: string;

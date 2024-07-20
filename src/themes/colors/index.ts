@@ -4,6 +4,7 @@ import { AppColors } from "./types";
 const Colors: AppColors = {
   ...DefaultTheme.colors,
   WHITE: "#FFFFFF",
+  BLACK: "#000000",
   YELLLOW: "#FBAE05",
   ORANGE: "#FF8C39",
   RED: "#EF5A56",
