@@ -2,36 +2,25 @@ import { useAppTheme } from "hooks/useAppTheme";
 import React from "react";
 import { Text, View } from "react-native";
 import styles from "./styles";
+import { BookContentProps } from "./types";
 
-const BookContent = () => {
+const BookContent = ({ title, authors }: BookContentProps) => {
   const { colors } = useAppTheme();
   const themedStyles = styles(colors);
 
   return (
     <View style={themedStyles.container}>
       <Text style={themedStyles.title} numberOfLines={2} ellipsizeMode="tail">
-        React Native for Mobile Development
+        {title}
       </Text>
       <View style={themedStyles.bottomContainer}>
-        <View>
-          <Text style={themedStyles.author}>Akshat Paul</Text>
-        </View>
-
-        {/* <View
-            style={{
-              backgroundColor: "#FFF8E0",
-              flexDirection: "row",
-              alignItems: "center",
-              paddingHorizontal: 5,
-              borderRadius: 12,
-              height: verticalScale(16),
-            }}
-          >
-            <StarIcon />
-            <Text style={{ marginStart: 8, ...Typography.body.small }}>
-              4.0
+        <View style={themedStyles.authorContainer}>
+          {authors.map((author) => (
+            <Text key={author} style={themedStyles.author}>
+              {author}
             </Text>
-          </View> */}
+          ))}
+        </View>
       </View>
     </View>
   );

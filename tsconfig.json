@@ -8,13 +8,13 @@
       "organisms/*": ["src/components/organisms/*"],
       "navigation/*": ["src/navigation/*"],
       "screens/*": ["src/screens/*"],
-      "utlis/*": ["src/utils/*"],
       "models/*": ["src/models/*"],
       "store/*": ["src/store/*"],
       "api/*": ["src/api/*"],
       "themes/*": ["src/themes/*"],
       "utils/*": ["src/utils/*"],
       "hooks/*": ["src/hooks/*"],
+      "services/*": ["src/services/*"],
       "assets/*": ["assets/*"]
     }
   }
