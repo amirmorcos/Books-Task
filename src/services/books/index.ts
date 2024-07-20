@@ -1,5 +1,5 @@
-import { Book } from "models/Book";
 import axiosInstance from "..";
+import { BooksResponse } from "./types";
 
 class BooksApis {
   async getBooksList(search?: string) {
@@ -9,11 +9,7 @@ class BooksApis {
         startIndex: 0,
       },
     });
-    return response.data as {
-      kind: "books#volumes";
-      totalItems: number;
-      items: Book[];
-    };
+    return response.data as BooksResponse;
   }
 }
 
