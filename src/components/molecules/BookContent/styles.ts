@@ -17,8 +17,11 @@ export default (colors: AppColors) =>
       alignItems: "center",
       justifyContent: "space-between",
     },
+    authorContainer: {
+      marginTop: verticalScale(8),
+    },
     author: {
       ...Typography.body.smallBold,
-      marginTop: verticalScale(10),
+      marginTop: verticalScale(5),
     },
   });

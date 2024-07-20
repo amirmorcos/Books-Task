@@ -5,14 +5,17 @@ import { TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { BookItemProps } from "./types";
 
-const BookItem = ({ onPress }: BookItemProps) => {
+const BookItem = ({ onPress, item }: BookItemProps) => {
   const { colors } = useAppTheme();
   const themedStyles = styles(colors);
 
   return (
     <TouchableOpacity onPress={onPress} style={themedStyles.container}>
-      <BookImage />
-      <BookContent />
+      <BookImage image={item.volumeInfo.imageLinks.thumbnail} />
+      <BookContent
+        title={item.volumeInfo.title}
+        authors={item.volumeInfo.authors}
+      />
     </TouchableOpacity>
   );
 };
