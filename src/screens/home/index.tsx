@@ -2,11 +2,17 @@ import { useAppTheme } from "hooks/useAppTheme";
 import { BookList } from "organisms/index";
 import React from "react";
 import styles from "./styles";
+import { useAppNavigation } from "navigation/types";
 
 const HomeScreen = () => {
   const { colors } = useAppTheme();
+  const { navigate } = useAppNavigation();
+
   const themedStyles = styles(colors);
-  const onItemPress = () => {};
+
+  const onItemPress = () => {
+    navigate("Details");
+  };
 
   return (
     <BookList
