@@ -2,7 +2,7 @@ import { useAppTheme } from "hooks/useAppTheme";
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 import styles from "./styles";
-import { ButtonProps } from "./types";
+import type { ButtonProps } from "./types";
 
 const Button = ({
   onPress,

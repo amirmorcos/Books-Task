@@ -1,17 +1,19 @@
-import { Button } from "atoms/index";
-import SearchInput from "molecules/SearchInput";
+import { useAppTheme } from "hooks/useAppTheme";
+import { BookList } from "organisms/index";
 import React from "react";
-import { View } from "react-native";
+import styles from "./styles";
 
 const HomeScreen = () => {
+  const { colors } = useAppTheme();
+  const themedStyles = styles(colors);
+  const onItemPress = () => {};
+
   return (
-    <View style={{ flex: 1, padding: 20, backgroundColor: "white" }}>
-      <Button disabled label="Button" onPress={() => {}} />
-      <SearchInput
-        onSearch={() => {}}
-        overrideContainerStyle={{ marginTop: 20 }}
-      />
-    </View>
+    <BookList
+      overrideContainerStyle={themedStyles.container}
+      data={[1, 2, 3, 4, 5]}
+      onItemPress={onItemPress}
+    />
   );
 };
 
