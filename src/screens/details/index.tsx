@@ -7,15 +7,26 @@ import styles from "./styles";
 import { useAppRoute } from "navigation/types";
 import BookInfo from "molecules/BookInfo";
 import { fixImageProtocol } from "utils/constants";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import BookActions from "molecules/BookActions";
+import { usefavoritesStore } from "store/index";
 
 const DetailsScreen = () => {
   const { colors } = useAppTheme();
   const { params } = useAppRoute();
-  const bookItem = params.item ?? {};
+  const { addFavorites, userFavorites, removeFavorites } = usefavoritesStore(
+    (state) => state
+  );
 
+  const bookItem = params.item ?? {};
+  const isFavorite = !!userFavorites.find((item) => item.id == bookItem.id);
   const themedStyles = styles(colors);
+
+  const onItemFavorite = () => {
+    if (!isFavorite) addFavorites(bookItem);
+    else {
+      removeFavorites(bookItem.id);
+    }
+  };
 
   return (
     <>
@@ -75,7 +86,8 @@ const DetailsScreen = () => {
           <Text>{bookItem.volumeInfo.description}</Text>
         </View>
       </ScrollView>
-      <BookActions />
+
+      <BookActions isFavorite={isFavorite} onFavoriteItem={onItemFavorite} />
     </>
   );
 };

@@ -8,20 +8,23 @@ const BookList = ({
   data,
   onItemPress,
   onRefresh,
+  emptyComponent,
   overrideContainerStyle,
 }: BookListProps) => {
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   const onDataRefresh = () => {
-    setIsRefreshing(true);
-    onRefresh();
-    setIsRefreshing(false);
+    if (onRefresh) {
+      setIsRefreshing(true);
+      onRefresh();
+      setIsRefreshing(false);
+    }
   };
 
   return (
     <FlatList
       refreshControl={
-        <RefreshControl refreshing={false} onRefresh={onDataRefresh} />
+        <RefreshControl refreshing={isRefreshing} onRefresh={onDataRefresh} />
       }
       showsVerticalScrollIndicator={false}
       numColumns={2}
@@ -31,6 +34,7 @@ const BookList = ({
       renderItem={({ item }) => (
         <BookItem item={item} onPress={() => onItemPress(item)} />
       )}
+      ListEmptyComponent={emptyComponent}
     />
   );
 };

@@ -5,21 +5,16 @@ import { useNavigationOptions } from "hooks/useNavigationOptions";
 const Stack = createStackNavigator();
 
 const FavoritesStackNavigation = () => {
-  const { commonOptions, homeOptions } = useNavigationOptions();
+  const { commonOptions } = useNavigationOptions();
   return (
     <Stack.Navigator screenOptions={commonOptions}>
-      <Stack.Screen
-        name="Favorites"
-        component={FavoritesScreen}
-        options={homeOptions}
-      />
+      <Stack.Screen name="Favorites" component={FavoritesScreen} />
       <Stack.Screen
         name="Details"
         component={DetailsScreen}
         options={{
           headerShown: false,
         }}
-        // options={homeOptions}
       />
     </Stack.Navigator>
   );
