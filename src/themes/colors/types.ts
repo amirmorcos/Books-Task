@@ -12,6 +12,8 @@ export type AppColors = {
   ORANGE: string;
   RED: string;
   BLUE: string;
+  LIGHT_BLUE: string;
+  LIGHT_YELLOW: string;
   GREYSCALE: {
     50: string;
     100: string;

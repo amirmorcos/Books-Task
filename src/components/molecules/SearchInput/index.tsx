@@ -8,12 +8,15 @@ import { SearchInputProps } from "./types";
 const SearchInput = ({
   onSearch,
   overrideContainerStyle,
+  ...props
 }: SearchInputProps) => {
   const { colors } = useAppTheme();
   const themedStyles = styles(colors);
 
   return (
     <Input
+      {...props}
+      onChangeText={onSearch}
       placeholder="Search"
       overrideInputStyle={themedStyles.input}
       overrideContainerStyle={overrideContainerStyle}

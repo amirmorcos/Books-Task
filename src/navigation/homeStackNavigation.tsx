@@ -1,23 +1,21 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen, DetailsScreen } from "screens/index";
-import { RootStackParamList } from "./types";
 import { useNavigationOptions } from "hooks/useNavigationOptions";
+import { DetailsScreen, HomeScreen, SearchScreen } from "screens/index";
+import { RootStackParamList } from "./types";
 
 const Stack = createStackNavigator<RootStackParamList>();
 
 const HomeStackNavigation = () => {
-  const { commonOptions, homeOptions } = useNavigationOptions();
+  const { commonOptions, homeOptions, detailsOptions } = useNavigationOptions();
   return (
     <Stack.Navigator screenOptions={commonOptions}>
       <Stack.Screen name="Home" component={HomeScreen} options={homeOptions} />
       <Stack.Screen
         name="Details"
         component={DetailsScreen}
-        options={{
-          headerShown: false,
-        }}
-        // options={homeOptions}
+        options={detailsOptions}
       />
+      <Stack.Screen name="Search" component={SearchScreen} />
     </Stack.Navigator>
   );
 };

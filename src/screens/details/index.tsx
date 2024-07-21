@@ -4,11 +4,12 @@ import BookActions from "molecules/BookActions";
 import BookInfo from "molecules/BookInfo";
 import { useAppRoute } from "navigation/types";
 import React from "react";
-import { Image, ImageBackground, ScrollView, Text, View } from "react-native";
+import { ImageBackground, ScrollView, Text, View } from "react-native";
 import Toast from "react-native-toast-message";
 import { usefavoritesStore } from "store/index";
 import { fixImageProtocol } from "utils/constants";
 import styles from "./styles";
+import FastImage from "react-native-fast-image";
 
 const DetailsScreen = () => {
   const { colors } = useAppTheme();
@@ -73,7 +74,7 @@ const DetailsScreen = () => {
               ))}
             </View>
 
-            <Image
+            <FastImage
               resizeMode="contain"
               source={{
                 uri: fixImageProtocol(bookItem.volumeInfo.imageLinks.thumbnail),
@@ -89,7 +90,9 @@ const DetailsScreen = () => {
         />
         <View style={themedStyles.detailsContainer}>
           <Text style={themedStyles.description}>Description</Text>
-          <Text>{bookItem.volumeInfo.description}</Text>
+          <Text>
+            {bookItem.volumeInfo.description ?? "No Description found"}
+          </Text>
         </View>
       </ScrollView>
 

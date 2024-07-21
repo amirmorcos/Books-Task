@@ -11,6 +11,7 @@ const BookList = ({
   onRefresh,
   emptyMessage,
   overrideContainerStyle,
+  ListHeaderComponent,
 }: BookListProps) => {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const { colors } = useAppTheme();
@@ -27,6 +28,7 @@ const BookList = ({
 
   return (
     <FlatList
+      ListHeaderComponent={ListHeaderComponent}
       refreshControl={
         <RefreshControl refreshing={isRefreshing} onRefresh={onDataRefresh} />
       }

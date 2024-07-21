@@ -17,10 +17,13 @@ const BookInfo = ({ categories, pageCount, rating }: BookInfoProps) => {
         </View>
       )}
       <View style={themedStyles.categoriesContainer}>
-        {categories.map((category) => (
-          <Text key={category} style={themedStyles.category}>
-            {category}
-          </Text>
+        {categories.map((category, index) => (
+          <React.Fragment key={category}>
+            <Text key={category} style={themedStyles.category}>
+              {category}
+            </Text>
+            {index < categories.length - 1 && <Text>-</Text>}
+          </React.Fragment>
         ))}
       </View>
       <View style={themedStyles.pageContainer}>

@@ -9,6 +9,12 @@ export type MainStackParamList = {
 export type RootStackParamList = {
   Home: undefined;
   Details: { item: Book };
+  Search: undefined;
+};
+
+export type FavoritesStackParamList = {
+  Favorites: undefined;
+  Details: { item: Book };
 };
 
 export const useAppNavigation = useNavigation<

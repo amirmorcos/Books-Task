@@ -22,7 +22,7 @@ export default (colors: AppColors) =>
     },
     ratingContainer: {
       height: verticalScale(16),
-      backgroundColor: "#FFF8E0",
+      backgroundColor: colors.LIGHT_YELLOW,
       borderRadius: 8,
       alignItems: "center",
       justifyContent: "space-between",
@@ -35,15 +35,16 @@ export default (colors: AppColors) =>
     },
     categoriesContainer: {
       height: verticalScale(16),
-      backgroundColor: "#CBF5FF",
+      backgroundColor: colors.LIGHT_BLUE,
       borderRadius: 8,
       alignItems: "center",
-      justifyContent: "center",
       paddingHorizontal: 10,
+      flexDirection: "row",
     },
     category: {
       ...Typography.body.smallBold,
       color: colors.BLACK,
+      marginEnd: scale(5),
     },
     pageContainer: {
       alignItems: "center",

@@ -9,18 +9,27 @@ import ActiveHomeIcon from "assets/icons/ActiveHomeIcon";
 import HomeIcon from "assets/icons/HomeIcon";
 import ActiveFavoriteIcon from "assets/icons/ActiveFavoriteIcon";
 import FavoriteIcon from "assets/icons/FavoriteIcon";
+import { useAppNavigation } from "navigation/types";
+import BackIconContainer from "atoms/BackIconContainer";
 
 export const useNavigationOptions = () => {
   const { colors } = useAppTheme();
+  const navigation = useAppNavigation();
 
   const searchIconStyle: ViewStyle = {
     marginEnd: scale(16),
   };
 
-  const onSearchIconPress = () => {};
+  const onSearchIconPress = () => {
+    navigation.navigate("Search");
+  };
 
   const commonOptions: StackNavigationOptions = {
     headerShadowVisible: false,
+    headerBackImage: () => (
+      <BackIconContainer overrideContainerStyle={{ marginStart: scale(10) }} />
+    ),
+    headerBackTitleVisible: false,
     headerTitleStyle: {
       ...Typography.heading.h4,
       color: colors.BLACK,
@@ -49,11 +58,16 @@ export const useNavigationOptions = () => {
       focused ? <ActiveFavoriteIcon /> : <FavoriteIcon />,
   };
 
+  const detailsOptions: StackNavigationOptions = {
+    headerShown: false,
+  };
+
   return {
     homeOptions,
     commonOptions,
     homeTabOptions,
     tabOptions,
     favoritesTabOptions,
+    detailsOptions,
   };
 };

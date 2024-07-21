@@ -1,20 +1,19 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { DetailsScreen, FavoritesScreen } from "screens/index";
 import { useNavigationOptions } from "hooks/useNavigationOptions";
+import { FavoritesStackParamList } from "./types";
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<FavoritesStackParamList>();
 
 const FavoritesStackNavigation = () => {
-  const { commonOptions } = useNavigationOptions();
+  const { commonOptions, detailsOptions } = useNavigationOptions();
   return (
     <Stack.Navigator screenOptions={commonOptions}>
       <Stack.Screen name="Favorites" component={FavoritesScreen} />
       <Stack.Screen
         name="Details"
         component={DetailsScreen}
-        options={{
-          headerShown: false,
-        }}
+        options={detailsOptions}
       />
     </Stack.Navigator>
   );
