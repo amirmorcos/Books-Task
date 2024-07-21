@@ -14,13 +14,15 @@ const BookContent = ({ title, authors }: BookContentProps) => {
         {title}
       </Text>
       <View style={themedStyles.bottomContainer}>
-        <View style={themedStyles.authorContainer}>
-          {authors.map((author) => (
-            <Text key={author} style={themedStyles.author}>
-              {author}
-            </Text>
-          ))}
-        </View>
+        {authors?.length && (
+          <View style={themedStyles.authorContainer}>
+            {authors.slice(0, 2).map((author) => (
+              <Text key={author} style={themedStyles.author}>
+                {author}
+              </Text>
+            ))}
+          </View>
+        )}
       </View>
     </View>
   );

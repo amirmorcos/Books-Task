@@ -38,6 +38,8 @@ export default (colors: AppColors) =>
       alignItems: "center",
       marginTop: verticalScale(5),
       marginBottom: verticalScale(30),
+      justifyContent: "center",
+      flexWrap: "wrap",
     },
     description: {
       ...Typography.body.xlarge,

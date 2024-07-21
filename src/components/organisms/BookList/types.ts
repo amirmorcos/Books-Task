@@ -1,5 +1,5 @@
 import { Book } from "models/Book";
-import { StyleProp, ViewStyle } from "react-native";
+import { FlatListProps, StyleProp, ViewStyle } from "react-native";
 
 export type BookListProps = {
   data: Book[];
@@ -7,4 +7,5 @@ export type BookListProps = {
   onRefresh?: () => void;
   emptyMessage?: string;
   overrideContainerStyle?: StyleProp<ViewStyle>;
+  ListHeaderComponent?: () => React.ReactElement;
 };
