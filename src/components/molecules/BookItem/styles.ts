@@ -5,7 +5,7 @@ import { AppColors } from "themes/colors/types";
 export default (colors: AppColors) =>
   StyleSheet.create({
     container: {
-      height: verticalScale(275),
+      height: verticalScale(300),
       width: scale(169),
       backgroundColor: colors.WHITE,
       borderRadius: 12,
