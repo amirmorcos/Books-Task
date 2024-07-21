@@ -5,6 +5,6 @@ export type BookListProps = {
   data: Book[];
   onItemPress: (item: any) => void;
   onRefresh?: () => void;
-  emptyComponent?: () => React.ReactElement;
+  emptyMessage?: string;
   overrideContainerStyle?: StyleProp<ViewStyle>;
 };

@@ -1,14 +1,14 @@
 import BackIconContainer from "atoms/BackIconContainer";
 import { useAppTheme } from "hooks/useAppTheme";
+import BookActions from "molecules/BookActions";
+import BookInfo from "molecules/BookInfo";
+import { useAppRoute } from "navigation/types";
 import React from "react";
 import { Image, ImageBackground, ScrollView, Text, View } from "react-native";
-import { scale, verticalScale } from "react-native-size-matters/extend";
-import styles from "./styles";
-import { useAppRoute } from "navigation/types";
-import BookInfo from "molecules/BookInfo";
-import { fixImageProtocol } from "utils/constants";
-import BookActions from "molecules/BookActions";
+import Toast from "react-native-toast-message";
 import { usefavoritesStore } from "store/index";
+import { fixImageProtocol } from "utils/constants";
+import styles from "./styles";
 
 const DetailsScreen = () => {
   const { colors } = useAppTheme();
@@ -22,10 +22,19 @@ const DetailsScreen = () => {
   const themedStyles = styles(colors);
 
   const onItemFavorite = () => {
+    const message = isFavorite
+      ? "Removed from Favorites"
+      : "Added to Favorites";
+
     if (!isFavorite) addFavorites(bookItem);
     else {
       removeFavorites(bookItem.id);
     }
+    Toast.show({
+      type: "success",
+      text1: message,
+      position: "bottom",
+    });
   };
 
   return (
@@ -69,10 +78,7 @@ const DetailsScreen = () => {
               source={{
                 uri: fixImageProtocol(bookItem.volumeInfo.imageLinks.thumbnail),
               }}
-              style={{
-                height: verticalScale(150),
-                width: scale(120),
-              }}
+              style={themedStyles.thumbnail}
             />
           </View>
         </ImageBackground>

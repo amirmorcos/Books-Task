@@ -2,7 +2,6 @@ import { Book } from "models/Book";
 import { useAppNavigation } from "navigation/types";
 import BookList from "organisms/BookList";
 import React from "react";
-import { Text, View } from "react-native";
 import { usefavoritesStore } from "store/index";
 
 const FavoritesScreen = () => {
@@ -19,13 +18,7 @@ const FavoritesScreen = () => {
         backgroundColor: "white",
       }}
       onItemPress={onItemPress}
-      emptyComponent={() => (
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <Text>No Favorites</Text>
-        </View>
-      )}
+      emptyMessage="No Favorites found"
     />
   );
 };

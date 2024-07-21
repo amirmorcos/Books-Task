@@ -1,17 +1,21 @@
 import { BookItem } from "molecules/index";
 import React, { useState } from "react";
-import { FlatList, RefreshControl } from "react-native";
+import { FlatList, RefreshControl, Text, View } from "react-native";
 import styles from "./styles";
 import { BookListProps } from "./types";
+import { useAppTheme } from "hooks/useAppTheme";
 
 const BookList = ({
   data,
   onItemPress,
   onRefresh,
-  emptyComponent,
+  emptyMessage,
   overrideContainerStyle,
 }: BookListProps) => {
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const { colors } = useAppTheme();
+
+  const themedStyles = styles(colors);
 
   const onDataRefresh = () => {
     if (onRefresh) {
@@ -30,11 +34,15 @@ const BookList = ({
       numColumns={2}
       style={overrideContainerStyle}
       data={data}
-      contentContainerStyle={styles.content}
+      contentContainerStyle={themedStyles.content}
       renderItem={({ item }) => (
         <BookItem item={item} onPress={() => onItemPress(item)} />
       )}
-      ListEmptyComponent={emptyComponent}
+      ListEmptyComponent={() => (
+        <View style={themedStyles.emptyContainer}>
+          <Text>{emptyMessage}</Text>
+        </View>
+      )}
     />
   );
 };
