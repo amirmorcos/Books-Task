@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <Text
+    ellipsizeMode="tail"
+    numberOfLines={2}
+  >
+    Test
+  </Text>
+  <View>
+    <View>
+      <Text>
+        Amir
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": undefined,
+      "borderColor": undefined,
+      "borderRadius": 30,
+      "borderWidth": 1,
+      "height": [MockFunction],
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": [MockFunction],
+    }
+  }
+>
+  <RNSVGSvgView
+    bbHeight={24}
+    bbWidth={24}
+    fill="none"
+    focusable={false}
+    height={24}
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+          "borderWidth": 0,
+        },
+        {
+          "flex": 0,
+          "height": 24,
+          "width": 24,
+        },
+      ]
+    }
+    width={24}
+  >
+    <RNSVGGroup
+      fill={null}
+      propList={
+        [
+          "fill",
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M9.57 5.93 3.5 12l6.07 6.07M20.5 12H3.67"
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+            "strokeMiterlimit",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4279374354,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeMiterlimit={10}
+        strokeWidth={2}
+      />
+    </RNSVGGroup>
+  </RNSVGSvgView>
+</View>
+`;

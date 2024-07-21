@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        [
+          {
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
+      }
+    >
+      <FastImageView
+        defaultSource={null}
+        resizeMode="contain"
+        style={
+          {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
+  </View>
+  <View>
+    <Text
+      ellipsizeMode="tail"
+      numberOfLines={2}
+    >
+      Mop Hop
+    </Text>
+    <View>
+      <View>
+        <Text>
+          Sharon  Coan
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

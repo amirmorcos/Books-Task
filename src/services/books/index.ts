@@ -6,7 +6,6 @@ class BooksApis {
     const response = await axiosInstance.get("volumes", {
       params: {
         q: search,
-        startIndex: 0,
       },
     });
     return response.data as BooksResponse;
