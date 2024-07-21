@@ -9,6 +9,8 @@ const Colors: AppColors = {
   ORANGE: "#FF8C39",
   RED: "#EF5A56",
   BLUE: "#3784FB",
+  LIGHT_BLUE: "#CBF5FF",
+  LIGHT_YELLOW: "#FFF8E0",
   GREYSCALE: {
     50: "#FAFAFA",
     100: "#F5F5F5",

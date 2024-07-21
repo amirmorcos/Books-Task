@@ -2,10 +2,10 @@ import axiosInstance from "..";
 import { BooksResponse } from "./types";
 
 class BooksApis {
-  async getBooksList(search?: string) {
+  async getBooksList(search = "react-native") {
     const response = await axiosInstance.get("volumes", {
       params: {
-        q: "react-native",
+        q: search,
         startIndex: 0,
       },
     });
