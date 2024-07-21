@@ -69,4 +69,8 @@ export default (colors: AppColors) =>
       marginBottom: verticalScale(10),
       marginStart: scale(20),
     },
+    thumbnail: {
+      height: verticalScale(150),
+      width: scale(120),
+    },
   });

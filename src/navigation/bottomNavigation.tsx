@@ -1,35 +1,25 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import ActiveFavoriteIcon from "assets/icons/ActiveFavoriteIcon";
-import ActiveHomeIcon from "assets/icons/ActiveHomeIcon";
-import FavoriteIcon from "assets/icons/FavoriteIcon";
-import HomeIcon from "assets/icons/HomeIcon";
 import FavoritesStackNavigation from "./favoritesStackNavigation";
 import HomeStackNavigation from "./homeStackNavigation";
+import { MainStackParamList } from "./types";
+import { useNavigationOptions } from "hooks/useNavigationOptions";
 
-const BottomTab = createBottomTabNavigator();
+const BottomTab = createBottomTabNavigator<MainStackParamList>();
 
 const BottomTabNavigation = () => {
+  const { tabOptions, homeTabOptions, favoritesTabOptions } =
+    useNavigationOptions();
   return (
-    <BottomTab.Navigator>
+    <BottomTab.Navigator screenOptions={tabOptions}>
       <BottomTab.Screen
         name="HomeStack"
         component={HomeStackNavigation}
-        options={{
-          headerShown: false,
-          tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) =>
-            focused ? <ActiveHomeIcon /> : <HomeIcon />,
-        }}
+        options={homeTabOptions}
       />
       <BottomTab.Screen
         name="FavoritesStack"
         component={FavoritesStackNavigation}
-        options={{
-          headerShown: false,
-          tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) =>
-            focused ? <ActiveFavoriteIcon /> : <FavoriteIcon />,
-        }}
+        options={favoritesTabOptions}
       />
     </BottomTab.Navigator>
   );

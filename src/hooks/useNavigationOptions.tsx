@@ -4,6 +4,11 @@ import { Typography } from "themes/fonts";
 import { TouchableOpacity, ViewStyle } from "react-native";
 import HomeSearchIcon from "assets/icons/HomeSearchIcon";
 import { scale } from "react-native-size-matters/extend";
+import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
+import ActiveHomeIcon from "assets/icons/ActiveHomeIcon";
+import HomeIcon from "assets/icons/HomeIcon";
+import ActiveFavoriteIcon from "assets/icons/ActiveFavoriteIcon";
+import FavoriteIcon from "assets/icons/FavoriteIcon";
 
 export const useNavigationOptions = () => {
   const { colors } = useAppTheme();
@@ -30,8 +35,25 @@ export const useNavigationOptions = () => {
     ),
   };
 
+  const tabOptions: BottomTabNavigationOptions = {
+    headerShown: false,
+    tabBarShowLabel: false,
+  };
+
+  const homeTabOptions: BottomTabNavigationOptions = {
+    tabBarIcon: ({ focused }) => (focused ? <ActiveHomeIcon /> : <HomeIcon />),
+  };
+
+  const favoritesTabOptions: BottomTabNavigationOptions = {
+    tabBarIcon: ({ focused }) =>
+      focused ? <ActiveFavoriteIcon /> : <FavoriteIcon />,
+  };
+
   return {
     homeOptions,
     commonOptions,
+    homeTabOptions,
+    tabOptions,
+    favoritesTabOptions,
   };
 };

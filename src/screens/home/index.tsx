@@ -6,7 +6,7 @@ import { useAppNavigation } from "navigation/types";
 import { BookList } from "organisms/index";
 import React from "react";
 import { ActivityIndicator, View } from "react-native";
-import BooksApi from "../../services/books";
+import BooksApi from "services/books";
 import styles from "./styles";
 
 const HomeScreen = () => {

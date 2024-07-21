@@ -5,17 +5,6 @@ import { shadowing } from "utils/constants";
 
 export default (colors: AppColors) =>
   StyleSheet.create({
-    container: {
-      position: "absolute",
-      height: verticalScale(80),
-      width: "100%",
-      backgroundColor: colors.WHITE,
-      flexDirection: "row",
-      alignItems: "center",
-      paddingHorizontal: scale(10),
-      justifyContent: "space-between",
-      ...shadowing,
-    },
     favoriteButton: {
       height: scale(50),
       width: scale(50),
@@ -23,9 +12,9 @@ export default (colors: AppColors) =>
       backgroundColor: colors.WHITE,
       justifyContent: "center",
       alignItems: "center",
+      position: "absolute",
+      bottom: verticalScale(15),
+      right: verticalScale(20),
       ...shadowing,
-    },
-    buyButton: {
-      width: scale(280),
     },
   });
