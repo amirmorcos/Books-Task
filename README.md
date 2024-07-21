@@ -69,6 +69,7 @@ Now that you have successfully run the app, let's check the structure. It's made
 3. React Native size matters: A lightweight, React-Native utility belt for scaling the size of the app UI across different dimensions
 4. Axios: handles api calls
 5. React Query : handle server state management
+6. Fast image: to handle image loading , caching and enhance rendering performance
 
 # Troubleshooting
 

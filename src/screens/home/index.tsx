@@ -10,16 +10,19 @@ import BooksApi from "services/books";
 import styles from "./styles";
 
 const HomeScreen = () => {
+  // get colors from theme object using the custom hook
   const { colors } = useAppTheme();
   const { navigate } = useAppNavigation();
 
   const focusedRef = React.useRef(true);
 
+  // function to call books(volumes) from axios provider
   const fetchBooks = async () => {
     const data = await BooksApi.getBooksList();
     return data;
   };
 
+  // focus effect fn is used to disable calling the api on screen blur just to to avoid re-rendering and enhance performance
   useFocusEffect(
     React.useCallback(() => {
       focusedRef.current = true;
@@ -37,10 +40,12 @@ const HomeScreen = () => {
 
   const themedStyles = styles(colors);
 
+  // function to navigate to details page and passing the book item
   const onItemPress = (item: Book) => {
     navigate("Details", { item });
   };
 
+  // In case of loading , returns loading indicator
   if (isLoading) {
     return (
       <View style={themedStyles.loadingContainer}>
@@ -49,9 +54,10 @@ const HomeScreen = () => {
     );
   }
 
+  // In case of retrieving the data , returns a grid of Book list consisting of 2 columns
   return (
     <BookList
-      onRefresh={() => refetch()}
+      onRefresh={refetch}
       overrideContainerStyle={themedStyles.container}
       data={data?.items ?? []}
       onItemPress={onItemPress}

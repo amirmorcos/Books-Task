@@ -21,24 +21,24 @@ export default (colors: AppColors) =>
       ...shadowing,
     },
     ratingContainer: {
-      height: verticalScale(16),
+      paddingHorizontal: scale(10),
+      paddingVertical: verticalScale(5),
       backgroundColor: colors.LIGHT_YELLOW,
       borderRadius: 8,
       alignItems: "center",
       justifyContent: "space-between",
       flexDirection: "row",
-      paddingHorizontal: scale(4),
     },
     rating: {
       ...Typography.body.smallBold,
       marginStart: scale(5),
     },
     categoriesContainer: {
-      height: verticalScale(16),
       backgroundColor: colors.LIGHT_BLUE,
       borderRadius: 8,
       alignItems: "center",
-      paddingHorizontal: 10,
+      paddingHorizontal: scale(10),
+      paddingVertical: verticalScale(5),
       flexDirection: "row",
     },
     category: {

@@ -9,12 +9,14 @@ export interface FavoritesState {
 
 export const favoritesStore = create<FavoritesState>()((set) => ({
   userFavorites: [],
+  // Add book item to user favorites
   addFavorites: (bookItem) =>
     set((state) => {
       const newFavorites = [...state.userFavorites];
       newFavorites.push(bookItem);
       return { userFavorites: newFavorites };
     }),
+  // remove book item from user favorites using book unique id
   removeFavorites: (bookId) =>
     set((state) => {
       const removedFavorites = [...state.userFavorites];
@@ -24,6 +26,7 @@ export const favoritesStore = create<FavoritesState>()((set) => ({
     }),
 }));
 
+// return custom hook for proper global state types
 export function usefavoritesStore<T>(selector: (state: FavoritesState) => T) {
   return useStore(favoritesStore, selector!);
 }

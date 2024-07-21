@@ -12,6 +12,7 @@ import styles from "./styles";
 import FastImage from "react-native-fast-image";
 
 const DetailsScreen = () => {
+  // get colors from theme object using the custom hook
   const { colors } = useAppTheme();
   const { params } = useAppRoute();
   const { addFavorites, userFavorites, removeFavorites } = usefavoritesStore(
@@ -22,6 +23,7 @@ const DetailsScreen = () => {
   const isFavorite = !!userFavorites.find((item) => item.id == bookItem.id);
   const themedStyles = styles(colors);
 
+  // this function is able to display the correct message to the user and add/remove book item from favorites
   const onItemFavorite = () => {
     const message = isFavorite
       ? "Removed from Favorites"
